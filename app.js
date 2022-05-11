@@ -1,4 +1,4 @@
-var axios = require('axios');
+const axios = require('axios');
 const https = require("https");
 const fs = require("fs");
 require('dotenv').config()
@@ -22,20 +22,21 @@ const httpsAgent = new https.Agent({
     // key: fs.readFileSync("./key.pem"),
 });
 
-(async () => {
-    try {
-        axios(config, {httpsAgent})
-            .then(function (response) {
-                var result = JSON.stringify(response.data)
-                console.log(result);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    } catch (error) {
-        console.log(error)
-    }
-})();
+
+
+try {
+    axios(config, {httpsAgent})
+        .then(function (response) {
+            var result = JSON.stringify(response.data)
+            console.log(result);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+} catch (error) {
+    console.log(error)
+}
+
 
 
 // axios(config, {httpsAgent})
