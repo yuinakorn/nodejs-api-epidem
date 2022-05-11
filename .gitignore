@@ -1,2 +1,5 @@
 .env
 node_modules
+.idea
+*.pem
+package-lock.json
